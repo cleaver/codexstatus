@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Codex Status · interface preview</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+      background: #11131b;
+      color: #f1f2f7;
+      font-synthesis: none;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-width: 760px; }
+    main { width: min(1160px, calc(100% - 64px)); margin: 54px auto; }
+    header { margin-bottom: 30px; }
+    .eyebrow { color: #9b9eb0; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { margin: 8px 0; font-size: 30px; font-weight: 650; }
+    header p { margin: 0; color: #a6a9b8; }
+    .surfaces { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items: start; }
+    .surface { overflow: hidden; border: 1px solid #343746; border-radius: 14px; background: #191c27; box-shadow: 0 18px 50px #0005; }
+    .caption { padding: 17px 20px 14px; color: #a6a9b8; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+    .desktop { height: 470px; background: linear-gradient(150deg, #303c55, #1a202e 68%, #222339); position: relative; }
+    .topbar { height: 42px; display: flex; align-items: center; justify-content: space-between; padding: 0 16px; color: #e6e8f0; background: #171a22eb; font-size: 12px; }
+    .topbar .center { position: absolute; left: 50%; transform: translateX(-50%); color: #c3c6d1; }
+    .topbar .right { display: flex; align-items: center; gap: 13px; }
+    .indicator { padding: 5px 9px; border-radius: 7px; background: #292d3a; font-weight: 600; }
+    .menu { position: absolute; right: 22px; top: 49px; width: 290px; border: 1px solid #393d4b; border-radius: 11px; background: #222530; box-shadow: 0 12px 36px #0009; padding: 8px 0; font-size: 13px; }
+    .menu .row { padding: 10px 15px; color: #e4e5eb; }
+    .menu .muted { color: #a7a9b6; }
+    .menu .divider { height: 1px; margin: 5px 0; background: #3b3e4a; }
+    .wallpaper-label { position: absolute; left: 28px; bottom: 26px; color: #c5c9d8; font-size: 14px; }
+    .launcher { width: 398px; margin: 14px auto 22px; border: 1px solid #404453; border-radius: 12px; overflow: hidden; background: #20232e; box-shadow: 0 18px 44px #0008; }
+    .search { padding: 14px 17px; color: #e1e3ec; border-bottom: 1px solid #383b47; font-size: 14px; }
+    .search span { color: #8e93a5; }
+    .section { padding: 10px 13px 4px; color: #9398a9; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
+    .item { display: grid; grid-template-columns: 28px 1fr auto; gap: 9px; align-items: center; padding: 10px 14px; }
+    .glyph { display: grid; place-items: center; width: 25px; height: 25px; border-radius: 7px; color: #14202c; background: #71d2bd; font-size: 15px; font-weight: 800; }
+    .item-title { font-size: 13px; }
+    .item-subtitle { margin-top: 4px; color: #a4a8b6; font-size: 11px; }
+    .badge { color: #d6d8e1; font-size: 11px; }
+    .item.active { background: #343846; }
+    .hint { padding: 11px 14px; border-top: 1px solid #383b47; color: #9da2b2; font-size: 11px; }
+    .status-dot { display: inline-block; width: 7px; height: 7px; margin-right: 5px; border-radius: 50%; background: #71d2bd; }
+    @media (max-width: 850px) { .surfaces { grid-template-columns: 1fr; } main { width: min(560px, calc(100% - 32px)); } }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="eyebrow">Interface preview · sample data</div>
+      <h1>Codex Status</h1>
+      <p>A glanceable panel indicator with a detailed Vicinae view.</p>
+    </header>
+    <div class="surfaces">
+      <section class="surface">
+        <div class="caption">GNOME top bar</div>
+        <div class="desktop">
+          <div class="topbar"><span>Activities</span><span class="center">Mon Oct 5 12:00</span><span class="right"><span>◉</span><span>⌁</span><span class="indicator">Codex 80%</span></span></div>
+          <div class="menu">
+            <div class="row">Signed in with ChatGPT</div>
+            <div class="row muted">Plan: plus</div>
+            <div class="row">5-hour limit: 80% left · resets at 1:30 PM</div>
+            <div class="row">Weekly limit: 55% left · resets at 8:00 AM</div>
+            <div class="divider"></div>
+            <div class="row muted">Checked at 12:00 PM</div>
+            <div class="divider"></div>
+            <div class="row">↻ &nbsp;Refresh status</div>
+          </div>
+          <div class="wallpaper-label">The panel label stays visible while the top bar is visible.</div>
+        </div>
+      </section>
+      <section class="surface">
+        <div class="caption">Vicinae command</div>
+        <div class="launcher">
+          <div class="search">⌕ &nbsp; Codex Status <span>________________</span></div>
+          <div class="section">Codex CLI</div>
+          <div class="item active"><span class="glyph">✓</span><div><div class="item-title">Signed in with ChatGPT</div><div class="item-subtitle">Sign-in status</div></div><span class="badge"><i class="status-dot"></i></span></div>
+          <div class="section">Usage</div>
+          <div class="item"><span>◷</span><div><div class="item-title">5-hour limit</div><div class="item-subtitle">Resets at 1:30 PM</div></div><span class="badge">80% left</span></div>
+          <div class="item"><span>◷</span><div><div class="item-title">Weekly limit</div><div class="item-subtitle">Resets at 8:00 AM</div></div><span class="badge">55% left</span></div>
+          <div class="section">Updated</div>
+          <div class="item"><span>◷</span><div><div class="item-title">Checked at 12:00 PM</div></div></div>
+          <div class="hint">↻ &nbsp; Refresh status</div>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

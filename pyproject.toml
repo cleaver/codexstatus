@@ -1,0 +1,8 @@
+[project]
+name = "codexstatus"
+version = "0.1.0"
+description = "Local Codex authentication and usage status for GNOME and Vicinae"
+requires-python = ">=3.10"
+
+[tool.unittest]
+start-directory = "tests"

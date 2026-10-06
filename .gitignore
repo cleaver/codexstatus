@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+node_modules/
+vicinae-extension/node_modules/
+vicinae-extension/codex-status.js
+vicinae-extension/format.js
+dist/

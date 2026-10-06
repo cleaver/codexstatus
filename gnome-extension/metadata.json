@@ -1,0 +1,7 @@
+{
+  "uuid": "codex-status@local",
+  "name": "Codex Status",
+  "description": "Show Codex CLI sign-in and usage in the GNOME top bar.",
+  "shell-version": ["50"],
+  "version": 1
+}
