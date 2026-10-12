@@ -14,10 +14,14 @@ function formatSignIn(auth = {}) {
   return `Signed in with ${methods[auth.method] ?? 'Codex credentials'}`;
 }
 
-function formatTime(value, timeZone) {
+function formatTime(value, timeZone, includeDate = false) {
   const date = new Date(value);
   if (Number.isNaN(date.getTime())) return 'unknown time';
-  const options = { hour: 'numeric', minute: '2-digit' };
+  const options = {
+    ...(includeDate ? { month: 'short', day: 'numeric' } : {}),
+    hour: 'numeric',
+    minute: '2-digit',
+  };
   if (timeZone) options.timeZone = timeZone;
   try {
     return new Intl.DateTimeFormat(undefined, options).format(date);
@@ -37,7 +41,10 @@ function quotaName(window, position) {
 function formatQuota(window, position, timeZone) {
   if (!window || typeof window.remainingPercent !== 'number') return null;
   const remaining = Math.max(0, Math.min(100, Math.round(window.remainingPercent)));
-  const reset = window.resetsAt ? ` · resets at ${formatTime(window.resetsAt, timeZone)}` : '';
+  const includeDate = window.windowDurationMins >= 1440;
+  const reset = window.resetsAt
+    ? ` · resets at ${formatTime(window.resetsAt, timeZone, includeDate)}`
+    : '';
   return `${quotaName(window, position)}: ${remaining}% left${reset}`;
 }
 

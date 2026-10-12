@@ -16,10 +16,14 @@ function formatAuth(auth = {}) {
   return `Signed in with ${AUTH_LABELS[auth.method] || 'Codex credentials'}`;
 }
 
-function formatTime(value, options = {}) {
+function formatTime(value, options = {}, includeDate = false) {
   const date = new Date(value);
   if (Number.isNaN(date.getTime())) return null;
-  const dateOptions = { hour: 'numeric', minute: '2-digit' };
+  const dateOptions = {
+    ...(includeDate ? { month: 'short', day: 'numeric' } : {}),
+    hour: 'numeric',
+    minute: '2-digit',
+  };
   if (options.timeZone) dateOptions.timeZone = options.timeZone;
   try {
     return new Intl.DateTimeFormat(options.locale, dateOptions).format(date);
@@ -39,7 +43,8 @@ function formatQuotaWindow(window, position, options = {}) {
   const title = labels[window.windowDurationMins]
     || (position === 0 ? 'Primary limit' : 'Secondary limit');
   const remaining = Math.max(0, Math.min(100, Math.round(window.remainingPercent)));
-  const reset = window.resetsAt ? formatTime(window.resetsAt, options) : null;
+  const includeDate = window.windowDurationMins >= 1440;
+  const reset = window.resetsAt ? formatTime(window.resetsAt, options, includeDate) : null;
   return {
     title,
     accessory: `${remaining}% left`,

@@ -34,7 +34,7 @@
       <text x="342" y="211" fill="#e4e5eb" font-family="sans-serif" font-size="13">5-hour limit: 80% left</text>
       <text x="342" y="231" fill="#a7a9b6" font-family="sans-serif" font-size="12">Resets at 1:30 PM</text>
       <text x="342" y="269" fill="#e4e5eb" font-family="sans-serif" font-size="13">Weekly limit: 55% left</text>
-      <text x="342" y="289" fill="#a7a9b6" font-family="sans-serif" font-size="12">Resets at 8:00 AM</text>
+      <text x="342" y="289" fill="#a7a9b6" font-family="sans-serif" font-size="12">Resets at Oct 11, 8:00 AM</text>
       <path d="M324 309h276" stroke="#3b3e4a"/>
       <text x="342" y="338" fill="#a7a9b6" font-family="sans-serif" font-size="12">Checked at 12:00 PM</text>
       <path d="M324 352h276" stroke="#3b3e4a"/>
@@ -61,7 +61,7 @@
       <text x="145" y="310" fill="#a4a8b6" font-family="sans-serif" font-size="11">Resets at 1:30 PM</text>
       <text x="446" y="299" fill="#d6d8e1" font-family="sans-serif" font-size="11">80% left</text>
       <text x="145" y="353" fill="#e1e3ec" font-family="sans-serif" font-size="13">◷  Weekly limit</text>
-      <text x="145" y="372" fill="#a4a8b6" font-family="sans-serif" font-size="11">Resets at 8:00 AM</text>
+      <text x="145" y="372" fill="#a4a8b6" font-family="sans-serif" font-size="11">Resets at Oct 11, 8:00 AM</text>
       <text x="446" y="361" fill="#d6d8e1" font-family="sans-serif" font-size="11">55% left</text>
       <text x="141" y="418" fill="#9398a9" font-family="sans-serif" font-size="11" letter-spacing="1">UPDATED</text>
       <text x="145" y="451" fill="#e1e3ec" font-family="sans-serif" font-size="13">◷  Checked at 12:00 PM</text>

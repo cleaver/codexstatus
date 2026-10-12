@@ -53,7 +53,7 @@ If the provider or Codex CLI is installed at a custom path, set `CODEXSTATUS_PRO
 
 - **Signed in / signed out / check unavailable** comes from `codex login status`.
 - **Usage available / unavailable / error** comes from the separate app-server quota read. Missing windows remain absent rather than being shown as full quota.
-- Reset times are displayed in the local time zone. Percentages show remaining quota.
+- Reset times are displayed in the local time zone. Windows of at least one day include the reset date; shorter windows show only the time. Percentages show remaining quota.
 - The provider emits a checked-at UTC timestamp and normalized JSON. It does not include raw CLI output, API key fragments, or app-server diagnostics.
 
 Run the provider directly for its JSON snapshot:
